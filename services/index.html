@@ -13,9 +13,9 @@
   <meta property="og:url" content="https://kotosrol.github.io/client-portfolio/services/">
   <meta property="og:image" content="https://kotosrol.github.io/client-portfolio/assets/viarente-home.webp">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../styles.css?v=2">
-  <link rel="stylesheet" href="order.css">
-  <script defer src="order.js"></script>
+  <link rel="stylesheet" href="../styles.css?v=3">
+  <link rel="stylesheet" href="order.css?v=2">
+  <script defer src="order.js?v=2"></script>
 </head>
 <body class="order-page">
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -23,39 +23,47 @@
     <a class="brand" href="../" aria-label="Александр Халтурин, работы"><span class="brand-mark">А</span><span>Александр<br>Халтурин</span></a>
     <nav aria-label="Основная навигация"><a href="../">Примеры работ</a><a href="https://t.me/kotosrol">Telegram ↗</a></nav>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="shell order-hero" aria-labelledby="title">
       <div class="order-intro">
-        <h1 id="title">Сайт, контент<br>и продвижение</h1>
-        <p>Разработаю сайт или помогу привести в порядок существующий. Подготовлю SEO-статьи, материалы для VK и Telegram и путь от публикации до обращения.</p>
-        <a class="order-jump" href="#options">Посмотреть услуги ↓</a>
+        <h1 id="title">Сайт, SEO<br> и <em>соцсети</em></h1>
+        <p>Новый сайт или доработка, статьи для поиска и контент для VK и Telegram.</p>
+        <div class="order-intro-links">
+          <a href="#options">Посмотреть услуги <span aria-hidden="true">↓</span></a>
+          <a href="https://t.me/kotosrol">Написать в Telegram <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
       <section id="order" class="order-panel" aria-labelledby="order-title">
         <h2 id="order-title">Обсудить задачу</h2>
-        <p>Выберите услугу. Бриф подготовит сообщение для Telegram.</p>
-        <form id="service-form">
-          <label for="service">Какая помощь нужна?</label>
-          <select name="service" id="service" required>
-            <option value="">Выберите услугу</option>
-            <option value="site">Новый сайт или доработка</option>
-            <option value="seo">SEO и статьи для сайта</option>
-            <option value="content">SMM и контент для соцсетей</option>
-            <option value="combined">Сайт и продвижение вместе</option>
-            <option value="automation">Telegram-бот или автоматизация</option>
-            <option value="other">Нужно обсудить варианты</option>
-          </select>
-          <label for="details">Пара слов о задаче <small>по желанию</small></label>
-          <textarea id="details" rows="3" maxlength="500" placeholder="Что нужно запустить или улучшить?"></textarea>
-          <button class="button button-primary" type="submit" disabled>Подготовить сообщение <span aria-hidden="true">→</span></button>
+        <p>Подготовьте черновик и отправьте его в Telegram.</p>
+        <form id="service-form" autocomplete="off">
+          <div class="order-fields">
+            <fieldset class="order-choices">
+              <legend>Какая помощь нужна?</legend>
+              <div class="order-choice-grid">
+                <label><input type="radio" name="service" value="site" id="service-site" required><span>Сайт или доработка</span></label>
+                <label><input type="radio" name="service" value="seo" id="service-seo"><span>SEO и статьи</span></label>
+                <label><input type="radio" name="service" value="content" id="service-content"><span>SMM и контент</span></label>
+                <label><input type="radio" name="service" value="combined" id="service-combined"><span>Сайт и продвижение</span></label>
+                <label><input type="radio" name="service" value="automation" id="service-automation"><span>Бот или автоматизация</span></label>
+                <label><input type="radio" name="service" value="other" id="service-other"><span>Помогите выбрать</span></label>
+              </div>
+            </fieldset>
+            <label class="order-details-label" for="details">Пара слов о задаче <small>по желанию</small></label>
+            <textarea id="details" rows="2" maxlength="500" placeholder="Что нужно запустить или улучшить?"></textarea>
+            <button class="button button-primary" type="submit" disabled>Подготовить сообщение <span aria-hidden="true">→</span></button>
+          </div>
           <section class="order-result" aria-labelledby="draft-title" hidden>
-            <h3 id="draft-title">Черновик сообщения</h3>
+            <h3 id="draft-title" tabindex="-1">Черновик сообщения</h3>
             <p id="draft"></p>
-            <a class="button button-primary" id="draft-link" href="https://t.me/kotosrol">Открыть в Telegram <span aria-hidden="true">↗</span></a>
-            <button class="order-copy" type="button">Скопировать текст</button>
-            <p class="order-status" role="status"></p>
+            <div class="order-result-actions">
+              <a class="button button-primary" id="draft-link" href="https://t.me/kotosrol">Открыть в Telegram <span aria-hidden="true">↗</span></a>
+              <button class="order-copy" type="button">Скопировать</button>
+              <button class="order-edit" type="button">Изменить ответ</button>
+            </div>
+            <p class="order-status" role="status" hidden></p>
           </section>
         </form>
-        <a class="order-direct" href="https://t.me/kotosrol">Написать сразу в Telegram ↗</a>
       </section>
     </section>
     <section class="order-options shell" id="options" aria-labelledby="options-title">
