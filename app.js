@@ -53,7 +53,19 @@ if (form) {
   const telegramLink = form.querySelector('[data-telegram-link]');
   const resetButton = form.querySelector('[data-reset]');
   const progress = form.querySelector('[data-progress]');
+  const copyButton = form.querySelector('[data-copy]');
+  const copyStatus = form.querySelector('[data-copy-status]');
   let activeStep = 1;
+  let draft = '';
+
+  copyButton.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(draft);
+      copyStatus.textContent = 'Сообщение скопировано.';
+    } catch {
+      copyStatus.textContent = 'Копирование недоступно. Выделите текст сообщения выше.';
+    }
+  });
 
   const selectedValue = (name) => form.querySelector(`input[name="${name}"]:checked`)?.value || '';
 
@@ -81,10 +93,11 @@ if (form) {
       `Приоритет: ${priority.toLowerCase()}.`,
     ];
     if (details) messageLines.push(`Детали: ${details}`);
-    const message = messageLines.join('\n');
+    draft = messageLines.join('\n');
+    copyStatus.textContent = '';
 
-    summary.textContent = `${service}. ${stage}. ${priority}.${details ? `\n${details}` : ''}`;
-    telegramLink.href = `https://t.me/kotosrol?text=${encodeURIComponent(message)}`;
+    summary.textContent = draft;
+    telegramLink.href = `https://t.me/kotosrol?text=${encodeURIComponent(draft)}`;
     steps.forEach((step) => { step.hidden = true; });
     controls.hidden = true;
     result.hidden = false;

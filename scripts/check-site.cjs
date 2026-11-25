@@ -15,6 +15,9 @@ const requiredFiles = [
   'assets/viarente-home.webp',
   'assets/viarente-navigator.webp',
   'assets/viarente-lead.webp',
+  'services/index.html',
+  'services/order.css',
+  'services/order.js',
 ];
 
 for (const file of requiredFiles) {
@@ -38,7 +41,17 @@ for (const phrase of ['гарантированно', 'быстро и дёше�
   if (html.toLowerCase().includes(phrase.toLowerCase())) failures.push(`Risky public copy: ${phrase}`);
 }
 
-if (localRefs.some((ref) => ref.startsWith('../'))) failures.push('Standalone site must not link to parent directories');
+const orderPage = path.join(root, 'services', 'index.html');
+if (fs.existsSync(orderPage)) {
+  const orderHtml = fs.readFileSync(orderPage, 'utf8');
+  for (const [, ref] of orderHtml.matchAll(/(?:href|src)="([^"#]+)"/g)) {
+    if (/^https?:/.test(ref)) continue;
+    const file = path.resolve(path.dirname(orderPage), ref.split('?')[0] || '.');
+    if (file !== root && !file.startsWith(root + path.sep) || !fs.existsSync(file)) {
+      failures.push(`Order page: broken local reference ${ref}`);
+    }
+  }
+}
 
 const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
 const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);

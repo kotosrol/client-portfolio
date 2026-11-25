@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta name="description" content="Заказать сайт, SEO-статьи, контент для соцсетей или Telegram-бота. Короткий бриф для обсуждения задачи.">
+  <title>Заказать сайт, SEO или SMM — Александр Халтурин</title>
+  <link rel="canonical" href="https://kotosrol.github.io/client-portfolio/services/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Заказать сайт, SEO или SMM">
+  <meta property="og:description" content="Выберите, что нужно бизнесу, и обсудите задачу с Александром Халтуриным в Telegram.">
+  <meta property="og:url" content="https://kotosrol.github.io/client-portfolio/services/">
+  <meta property="og:image" content="https://kotosrol.github.io/client-portfolio/assets/viarente-home.webp">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=2">
+  <link rel="stylesheet" href="order.css">
+  <script defer src="order.js"></script>
+</head>
+<body class="order-page">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="order-header shell">
+    <a class="brand" href="../" aria-label="Александр Халтурин, работы"><span class="brand-mark">А</span><span>Александр<br>Халтурин</span></a>
+    <nav aria-label="Основная навигация"><a href="../">Примеры работ</a><a href="https://t.me/kotosrol">Telegram ↗</a></nav>
+  </header>
+  <main id="main">
+    <section class="shell order-hero" aria-labelledby="title">
+      <div class="order-intro">
+        <h1 id="title">Сайт, контент<br>и продвижение</h1>
+        <p>Разработаю сайт или помогу привести в порядок существующий. Подготовлю SEO-статьи, материалы для VK и Telegram и путь от публикации до обращения.</p>
+        <a class="order-jump" href="#options">Посмотреть услуги ↓</a>
+      </div>
+      <section id="order" class="order-panel" aria-labelledby="order-title">
+        <h2 id="order-title">Обсудить задачу</h2>
+        <p>Выберите услугу. Бриф подготовит сообщение для Telegram.</p>
+        <form id="service-form">
+          <label for="service">Какая помощь нужна?</label>
+          <select name="service" id="service" required>
+            <option value="">Выберите услугу</option>
+            <option value="site">Новый сайт или доработка</option>
+            <option value="seo">SEO и статьи для сайта</option>
+            <option value="content">SMM и контент для соцсетей</option>
+            <option value="combined">Сайт и продвижение вместе</option>
+            <option value="automation">Telegram-бот или автоматизация</option>
+            <option value="other">Нужно обсудить варианты</option>
+          </select>
+          <label for="details">Пара слов о задаче <small>по желанию</small></label>
+          <textarea id="details" rows="3" maxlength="500" placeholder="Что нужно запустить или улучшить?"></textarea>
+          <button class="button button-primary" type="submit" disabled>Подготовить сообщение <span aria-hidden="true">→</span></button>
+          <section class="order-result" aria-labelledby="draft-title" hidden>
+            <h3 id="draft-title">Черновик сообщения</h3>
+            <p id="draft"></p>
+            <a class="button button-primary" id="draft-link" href="https://t.me/kotosrol">Открыть в Telegram <span aria-hidden="true">↗</span></a>
+            <button class="order-copy" type="button">Скопировать текст</button>
+            <p class="order-status" role="status"></p>
+          </section>
+        </form>
+        <a class="order-direct" href="https://t.me/kotosrol">Написать сразу в Telegram ↗</a>
+      </section>
+    </section>
+    <section class="order-options shell" id="options" aria-labelledby="options-title">
+      <h2 id="options-title">Выберите, с чего начать</h2>
+      <div class="order-grid">
+        <article>
+          <h3>Сайт или доработка</h3>
+          <p>Лендинг, сайт услуг или изменение существующих страниц. Обсудим структуру, контент, путь заявки и запуск.</p>
+          <a data-service="site" href="?service=site#order">Обсудить сайт ↗</a>
+        </article>
+        <article>
+          <h3>SEO и статьи</h3>
+          <p>Подбор тем по поисковому спросу, обновление страниц, статьи с первоисточниками и внутренние ссылки на услуги.</p>
+          <a data-service="seo" href="?service=seo#order">Обсудить SEO и статьи ↗</a>
+        </article>
+        <article>
+          <h3>SMM и контент</h3>
+          <p>Контент-план, посты для VK и Telegram, сценарии коротких видео. Для отдельного теста — креатив, лид-форма и UTM.</p>
+          <a data-service="content" href="?service=content#order">Обсудить SMM ↗</a>
+        </article>
+        <article>
+          <h3>Telegram и автоматизация</h3>
+          <p>Бот, Mini App или связка сайта с рабочими сервисами. Покажу, где упростить запись, статусы и уведомления.</p>
+          <a data-service="automation" href="?service=automation#order">Обсудить автоматизацию ↗</a>
+        </article>
+      </div>
+    </section>
+    <section class="shell order-next" aria-labelledby="next-title">
+      <h2 id="next-title">После первого сообщения</h2>
+      <p>Уточню задачу, предложу первый этап и скажу, что нужно для оценки сроков и стоимости. Можно начать с одной страницы, статьи или рекламного теста.</p>
+    </section>
+  </main>
+  <footer class="order-footer shell">
+    <a href="../">Примеры работ</a>
+    <a href="https://t.me/kotosrol">@kotosrol ↗</a>
+  </footer>
+</body>
+</html>
+

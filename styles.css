@@ -150,7 +150,7 @@ img { display: block; max-width: 100%; }
 .section-head .section-kicker { align-self: start; }
 .section-head h2 { font-size: clamp(42px, 4.4vw, 67px); }
 .section-head > p:last-child { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .service-card { min-height: 590px; padding: 28px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 35px rgba(21,24,32,.04); transition: transform .25s ease, box-shadow .25s ease; }
 .service-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); }
 .service-blue { color: var(--white); background: var(--blue); }
@@ -225,7 +225,7 @@ img { display: block; max-width: 100%; }
 .phone-card p { margin: 0; display: flex; flex-direction: column; }
 .phone-card strong { font-size: 7px; }
 .phone-card p span { color: rgba(255,255,255,.5); font-size: 7px; }
-.phone-card button { width: 21px; height: 21px; padding: 0; color: #12141a; background: var(--acid); border: 0; border-radius: 50%; font-size: 12px; }
+.phone-add { display: grid; place-items: center; width: 21px; height: 21px; color: #12141a; background: var(--acid); border: 0; border-radius: 50%; font-size: 12px; }
 .phone-nav { margin-top: 20px; display: flex; justify-content: space-around; color: rgba(255,255,255,.35); font-style: normal; font-size: 11px; }
 .phone-nav i:nth-child(2) { color: var(--acid); }
 .product-pill { position: absolute; right: 18px; bottom: 20px; padding: 10px 12px; color: var(--ink); background: var(--acid); border: 1px solid var(--ink); border-radius: 99px; font-size: 9px; font-weight: 900; box-shadow: 5px 5px 0 var(--ink); }
@@ -523,3 +523,10 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; }
   .work, .service-card, .quality-panel { color: #000 !important; background: #fff !important; box-shadow: none !important; }
 }
+
+.service-content { color: #171944; background: #e2def9; }
+.case-editorial { margin-top: 24px; background: #1d2153; color: #fff; }
+.case-editorial .case-copy { min-height: auto; }
+.case-editorial .case-link { margin-top: 16px; }
+.brief-copy-status { display: block; min-height: 1em; font-size: 13px; }
+.brief-result [data-copy] { margin-inline: 6px; }
